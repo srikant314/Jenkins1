@@ -1,0 +1,19 @@
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: hello-world-deployment
+  namespace: development
+  labels:
+    app: hello-world-app
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        apps: hello-world
+    spec:
+      containers:
+      - name: hello-world
+        image: gcr.io/eighth-service-250517/hello-world:development
+        ports:
+        - containerPort: 8080
