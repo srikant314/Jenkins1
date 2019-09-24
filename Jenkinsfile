@@ -46,10 +46,11 @@ node{
            //Grab the external Ip address of the service
                     sh("echo http://`kubectl --namespace=${namespace} get service/${feSvcName} --output=json | jq -r '.status.loadBalancer.ingress[0].ip'` > ${feSvcName}") 
                    //sh("echo http://`kubectl --namespace=${namespace} get service/${feSvcName} --output=json | jq -r '.status.loadBalancer.ingress[0].ip'` > ${feSvcName}")
+                   }
                    break
            
         //Roll out to Dev Environment
-              case "production":
+              case "production":                                                                                                                                                                                                          
                    // Create namespace if it doesn't exist
                    sh("kubectl get ns ${namespace} || kubectl create ns ${namespace}")
            //Update the imagetag to the latest version
