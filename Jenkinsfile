@@ -5,7 +5,7 @@ node{
   def serviceName = "${appName}-backend"  
   def imageVersion = 'development'
   def namespace = 'development'
-  def feSvcName = 'hello-world'
+  def feSvcName = 'hello-world-service'
   def imageTag = "gcr.io/${project}/${appName}:${imageVersion}.${env.BUILD_NUMBER}"
   
   //Checkout Code from Git
